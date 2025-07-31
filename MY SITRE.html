@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DTHMPLUS - Équipements réseaux & informatiques</title>
+  <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Header + nav */
+    header {
+      background: #ff6600;
+      color: white;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: white;
+      color: #ff6600;
+    }
+
+    /* Main container */
+    main {
+      padding: 100px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Section titles */
+    main > section > h2 {
+      color: #ff6600;
+      margin-bottom: 20px;
+      font-size: 28px;
+      border-bottom: 3px solid #ff6600;
+      padding-bottom: 8px;
+    }
+
+    /* Product grid */
+    section.products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+
+    /* Product card */
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-info {
+      padding: 15px;
+      flex-grow: 1;
+    }
+    .product-info h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #ff6600;
+    }
+    .product-info p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 12px;
+      min-height: 48px;
+    }
+    .price-tag {
+      background: #ff6600;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    /* Responsive nav */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 onclick="window.location='#accueil'">DTHMPLUS</h1>
+  <nav>
+    <ul>
+      <li><a href="#accueil" class="active">Accueil</a></li>
+      <li><a href="#ubiquiti">Ubiquiti</a></li>
+      <li><a href="#mikrotik">MikroTik</a></li>
+      <li><a href="#grandstream">Grandstream</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Accueil -->
+  <section id="accueil" aria-label="Accueil">
+    <h2>Bienvenue chez DTHMPLUS</h2>
+    <p>
+      Votre fournisseur de confiance pour les équipements informatiques et réseaux au Mali et Burkina Faso.
+      Découvrez notre large gamme d'antennes, points d'accès, routeurs, et équipements de marques réputées comme
+      <strong>Ubiquiti</strong>, <strong>MikroTik</strong>, et <strong>Grandstream</strong>.
+    </p>
+
+    <section class="products" aria-label="Produits en vedette">
+      <article class="product-card" tabindex="0">
+        <img src="ubiquiti_unifi_ap_ac_lite.jpg" alt="Ubiquiti UniFi AP AC Lite" />
+        <div class="product-info">
+          <h3>Ubiquiti UniFi AP AC Lite</h3>
+          <p>Point d'accès Wi-Fi double bande, 867 Mbps (5 GHz), 300 Mbps (2.4 GHz).</p>
+        </div>
+        <div class="price-tag">68 000 FCFA</div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="mikrotik_rb951ui.jpg" alt="MikroTik RB951Ui" />
+        <div class="product-info">
+          <h3>MikroTik RB951Ui</h3>
+          <p>Routeur sans fil avec 5 ports Ethernet, puissance PoE sur port 5, 128 Mo RAM.</p>
+        </div>
+        <div class="price-tag">39 100 FCFA</div> <!-- 15% augmentation sur 34 000 -->
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="grandstream_gwn7630.jpg" alt="Grandstream GWN7630" />
+        <div class="product-info">
+          <h3>Grandstream GWN7630</h3>
+          <p>Point d'accès Wi-Fi AC1750, 4 antennes, 2x2:2 MU-MIMO, pour PME.</p>
+        </div>
+        <div class="price-tag">106 400 FCFA</div> <!-- 40% augmentation sur 76 000 -->
+      </article>
+    </section>
+  </section>
+
+  <!-- Ubiquiti -->
+  <section id="ubiquiti" aria-label="Produits Ubiquiti">
+    <h2>Ubiquiti</h2>
+    <section class="products">
+      <article class="product-card" tabindex="0">
+        <img src="ubiquiti_unifi_ap_ac_lite.jpg" alt="Ubiquiti UniFi AP AC Lite" />
+        <div class="product-info">
+          <h3>Ubiquiti UniFi AP AC Lite</h3>
+          <p>Point d'accès Wi-Fi double bande, 867 Mbps (5 GHz), 300 Mbps (2.4 GHz).</p>
+        </div>
+        <div class="price-tag">68 000 FCFA</div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="ubiquiti_nanostation_m5.jpg" alt="NanoStation M5" />
+        <div class="product-info">
+          <h3>Ubiquiti NanoStation M5</h3>
+          <p>Point d'accès extérieur 5GHz, 150 Mbps, portée jusqu’à 15km.</p>
+        </div>
+        <div class="price-tag">59 000 FCFA</div>
+      </article>
+
+      <!-- Ajouter plus si besoin -->
+    </section>
+  </section>
+
+  <!-- MikroTik -->
+  <section id="mikrotik" aria-label="Produits MikroTik">
+    <h2>MikroTik</h2>
+    <section class="products">
+
+      <article class="product-card" tabindex="0">
+        <img src="mikrotik_hap_ac2.jpg" alt="MikroTik hAP ac2" />
+        <div class="product-info">
+          <h3>MikroTik hAP ac2</h3>
+          <p>Routeur Wi-Fi AC1200, 5 ports Ethernet, processeur dual-core, prise en charge PoE.</p>
+        </div>
+        <div class="price-tag">63 000 FCFA</div> <!-- 15% augmentation sur 54 700 -->
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="mikrotik_rb951ui.jpg" alt="MikroTik RB951Ui" />
+        <div class="product-info">
+          <h3>MikroTik RB951Ui</h3>
+          <p>Routeur sans fil avec 5 ports Ethernet, puissance PoE sur port 5, 128 Mo RAM.</p>
+        </div>
+        <div class="price-tag">39 100 FCFA</div> <!-- 15% augmentation sur 34 000 -->
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="mikrotik_wap_ac.jpg" alt="MikroTik WAP AC" />
+        <div class="product-info">
+          <h3>MikroTik WAP AC</h3>
+          <p>Point d'accès Wi-Fi AC, 2 antennes, support PoE, idéal PME.</p>
+        </div>
+        <div class="price-tag">45 000 FCFA</div>
+      </article>
+    </section>
+  </section>
+
+  <!-- Grandstream -->
+  <section id="grandstream" aria-label="Produits Grandstream">
+    <h2>Grandstream</h2>
+    <section class="products">
+
+      <article class="product-card" tabindex="0">
+        <img src="grandstream_gwn7630.jpg" alt="Grandstream GWN7630" />
+        <div class="product-info">
+          <h3>Grandstream GWN7630</h3>
+          <p>Point d'accès Wi-Fi AC1750, 4 antennes, 2x2:2 MU-MIMO, pour PME.</p>
+        </div>
+        <div class="price-tag">106 400 FCFA</div> <!-- 40% augmentation sur 76 000 -->
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="grandstream_gxp1620.jpg" alt="Grandstream GXP1620" />
+        <div class="product-info">
+          <h3>Grandstream GXP1620</h3>
+          <p>Téléphone IP SIP à 2 lignes, affichage 132x48 pixels, compatible PoE.</p>
+        </div>
+        <div class="price-tag">30 000 FCFA</div>
+      </article>
+
+      <!-- Plus de produits possibles -->
+    </section>
+  </section>
+
+</main>
+
+<footer>
+  Contactez-nous : 00226 66 34 72 84 | Livraison au Mali & Burkina Faso &copy; 2025 DTHMPLUS
+</footer>
+
+<script>
+  // Script pour changer la classe "active" dans le menu selon la section visible
+  const sections = document.querySelectorAll("main > section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 110;
+      if(pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if(link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
